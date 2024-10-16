@@ -1,0 +1,33 @@
+function busquedaBinaria(A, elm) {
+    // Input: un arreglo A de elementos ordenados
+    // Output: índice si se encuentra, -1 si no se encuentra
+    let l = A.length;
+    if (l == 1) {
+        if (A[0] == elm) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }    
+
+    let m = Math.floor(l / 2);
+    if (A[m] == elm) {
+        return m;
+    }
+
+    if (A[m] < elm) {
+        let r = busquedaBinaria(A.slice(m), elm);
+    
+        if (r == -1) {
+            return -1;
+        } else {
+            return m + r;
+        }
+    }
+
+    return busquedaBinaria(A.slice(0, m), elm);//slice para crear array del array con limites divididos
+}
+
+let arr = [0,1,2,3,4,5,6,7,8,9,121,124,4141,531545,6567574,768755];
+
+console.log(busquedaBinaria(arr, 9));
