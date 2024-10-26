@@ -1,4 +1,4 @@
-//IN: STRING s
+//IN: STRING s, n
 //OUT: LAST WOLRD reverse
 
 function lastWrld(s, n) {
